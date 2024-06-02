@@ -20,9 +20,16 @@ export class ProfessorSeeder extends Seeder{
             }
         );
         const professors = new ProfessorFactory().createMany(PROFESSORS);
+        // professors.forEach((professor: { user: User; }) =>{
+        //     professor.user= getRandomValueFromArray(users)
+        // })
+        const newProfessors: User[] = []
         professors.forEach((professor: { user: User; }) =>{
-            professor.user= getRandomValueFromArray(users)
-        })
+            const user = users.pop()
+            if(user) 
+                return professor.user = user
+            }
+        )
         await Professor.save(professors);
     }
 }

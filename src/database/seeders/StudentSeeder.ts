@@ -19,9 +19,16 @@ export class StudentSeeder extends Seeder{
             }
         );
         const students = new StudentFactory().createMany(STUDENTS);
-        students.forEach((student: { user: User; })=>{
-            student.user=getRandomValueFromArray(users)
-        })
+        // students.forEach((student: { user: User; })=>{
+        //     student.user=getRandomValueFromArray(users)
+        // })
+        const newStudents: User[] = []
+        students.forEach((student: { user: User; }) =>{
+            const user = users.pop()
+            if(user) 
+                return student.user = user
+            }
+        )
         await Student.save(students);
     } 
 }

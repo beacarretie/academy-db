@@ -14,43 +14,48 @@
 </details>
 
 ## Objetivo
-Desde el departamento de producto nos piden crear el backend
-correspondiente al sistema de gestión de citas para un estudio de tatuajes.
-Para ello el cliente deberá ser capaz de registrarse en la aplicación, hacer
-login y acceder a su área de cliente, todo ello visualmente desde el navegador. En
-su área de cliente deberá poder ver una lista de las citas para sesiones de tattoo /
-piercing que tiene a futuro, podrá crear citas con tatuadores y cada tatuador tendrá
-un portfolio de tatuajes(galeria?), modificarlas y anularlas.
-También existirá una zona de usuario con sus datos personales, que solo
-podrá ver él mismo.
+El proyecto final de Bootcamp Full Stack consta de dos partes, Frontend y Backend. Se espera que el alumnado demuestre todos los conocimientos adquiridos a lo largo de la formación.
+Respecto a la parte backend, el alumnado combinará los conocimientos adquiridos en las diferentes tecnologías Backend: Node.js + Express, combinado bien con MySQL/TypeORM o con MongoDB.
+
 ## Sobre el proyecto
-Teniendo en cuenta los requisitos, llegamos a la conclusión de que este sería
-el mínimo de endpoints convenientes:
+Una vez analizadas las necesidades del proyecto, de libre temática, se espera que el alumnado desarrolle una API REST para nutrir las vistas de frontend. La cual sea capaz de:
 
 1. Registro de usuarios.
-2. Login de usuarios.
-3. Perfil de usuario.
-4. Modificación de datos del perfil.
-5. Creación de citas.
-6. Editar citas.
-7. Eliminación de citas
-8. Ver todas las citas que tengo como cliente (solo las propias).
-9. Ver todas las citas existentes conmigo (role tatuador).
-10. Listar tatuadores
-11. Ver todos los clientes registrados (super admin) (EXTRA)
-12. Crear tatuadores (superadmin) (EXTRA)
-13. Ver todos los clientes registrados (super admin) (EXTRA)
-14. Eliminar usuario del sistema(super admin ) (EXTRA)
-15. Ver una cita en detalle (EXTRA).
-16. El super_admin debe otorgar roles a los usuarios del sistema(EXTRA)
-17. Validar la fecha de la cita(EXTRA)
-18. Añadir tipos de intervención (tattoo / piercing ) a las citas (EXTRA)
+2. Login de usuarios + token + middleware.
+3. Middleware para los roles de usuario.
+4. CRUD de los diferentes modelos.
+5. Al menos una relación many-to-many y otra one-to-many.
+6. Migraciones.
+7. Seeders para las diferentes tablas.
+8. Requisitos imprescindibles del proyecto:
+- Buen naming en las variables.
+- Uso de servicios para no sobrecargar los controladores.
+- Homogeneidad de código.
+- Aplicación de buenas prácticas de desarrollo, tales como:
+    > Utilizar nombres de variables, funciones y clases descriptivos y significativos.
+    > Escribir código legible y fácil de entender, con una estructura clara y coherente.
+    > Escribir comentarios claros y concisos que expliquen el propósito y la funcionalidad del código.
+    > Utilizar constantes en lugar de valores literales para hacer el código más fácil de mantener y modificar.
+    > Dividir el código en funciones o métodos más pequeños y específicos, para hacerlo más fácil de entender y depurar.
+    > Evitar la duplicación de código, utilizando funciones o métodos genéricos en su lugar.
+    > Utilizar estructuras de control de flujo de forma clara y coherente, evitando anidaciones excesivas.
+    > Utilizar excepciones para manejar errores y situaciones imprevistas, en lugar de usar comprobaciones condicionales complejas.
+    > Realizar pruebas unitarias para asegurarse de que el código funcione correctamente en todas las situaciones previstas.
+    > Uso correcto de Gl T.
+    > Presentación de README imprescindible.
+- Extras:
+    > Sistema de paginación.
+    > Proyecto dockerizado.
+
+
+
+
+
 ## Stack
 1. Para el desarrollo del backend se utilizará TypeOrm.
 2. Debemos usar ES6 o TS, se valorará el dominio sobre las promesas, así como
 la funcionalidad de async/await.
-3. El proyecto se subirá a un repositorio público de GitHub y se valorará la existencia de ramas o trabajo en features (Git Flow), así como diversos
-commits con la evolución del proyecto.
+3. El proyecto se subirá a un repositorio público de GitHub y se valorará la existencia de ramas o trabajo en features (Git Flow), así como diversos commits con la evolución del proyecto.
 
 ## Endpoints
 <details>
@@ -58,7 +63,7 @@ commits con la evolución del proyecto.
 
 - REGISTER/LOGIN
 
-    //ADMIN ARTIST, CLIENT
+    //ADMIN, PROFESSOR, STUDENT
     - Registro de usuarios.
 
             POST http://localhost:3000/api/users/create
@@ -86,7 +91,7 @@ commits con la evolución del proyecto.
 - APPOINTMENTS INFO
 
     //ADMIN, PROFESSOR
-    - Creación de citas.
+    - Creación de citas/tutorías.
     
             POST http://localhost:3000/api/appointments/create
         
